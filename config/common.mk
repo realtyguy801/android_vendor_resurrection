@@ -197,7 +197,7 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     LiveLockScreenService \
     WeatherProvider \
-	OmniSwitch \
+    OmniSwitch \
     SoundRecorder \
     Screencast
 
