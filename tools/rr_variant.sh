@@ -1,39 +1,34 @@
 #!/bin/bash
 # Build type chooser for the Resurrection Remix ROM
-if [ -z $RR_BUILDTYPE ];
-then
-
 . $ANDROID_BUILD_TOP/vendor/cm/tools/colors
 echo -e ${ylw}"\n\n ▼ Which build type do you want to choose?\n"${txtrst}
 echo -e "";
-echo -e ${grn}" 〉1- Pimps"${txtrst}
+echo -e ${blu}" 〉 1- Official "${txtrst}${red}"    ︱ Option for the only official device maintainers"${txtrst}
 echo -e "";
-echo -e ${cya}" 〉2- Unofficial"${txtrst}
+echo -e ${blu}" 〉 2- Unofficial "${txtrst}${red}"  ︱ Option for the unofficial device builders"${txtrst}
 echo -e "";
-echo -e ${cya}" 〉3- Nightly"${txtrst}
+echo -e ${blu}" 〉 3- Nightly "${txtrst}${red}"     ︱ Option for the only official daily builders"${txtrst}
 echo -e "";
-echo -e ${cya}" 〉4- Weekly"${txtrst}
+echo -e ${blu}" 〉 4- Weekly "${txtrst}${red}"      ︱ Option for the only official weekly builders"${txtrst}
 echo -e "";
-echo -e ${red}" 〉15/sec Time-out (Pimps)"${txtrst}
+echo -e ${blu}" 🕑  30/sec Time-out "${txtrst}${red}"︱ Unofficial by default"${txtrst}
 echo -e "";
-echo -e ${blu}" ▼ Pick a number"${txtrst}
+echo -e ${cya}" ▼ Pick a number"${txtrst}
 echo -e "";
 $normal
-if [ -z $askvariant ];then
-read -t 15 askvariant || autovariant=1
-fi
+read -t 30 askvariant || autovariant=1
 sleep 1
 if [ "$autovariant" == "1" ]
 then
-RR_BUILDTYPE=unofficial
+export RR_BUILDTYPE=unofficial
 $normal
 sleep 1
 fi
 if [ "$askvariant" == "1" ]
 then
 echo -e "";
-echo -e ${blu}" ▪ Building Pimps variant "${txtrst}
-RR_BUILDTYPE=Pimps
+echo -e ${blu}" ▪ Building official variant "${txtrst}
+export RR_BUILDTYPE=official
 echo -e "";
 echo -e "";
 $normal
@@ -43,7 +38,7 @@ if [ "$askvariant" == "2" ]
 then
 echo -e "";
 echo -e ${blu}" ▪ Building unofficial variant "${txtrst}
-RR_BUILDTYPE=unofficial
+export RR_BUILDTYPE=unofficial
 echo -e "";
 echo -e "";
 $normal
@@ -53,7 +48,7 @@ if [ "$askvariant" == "3" ]
 then
 echo -e "";
 echo -e ${blu}" ▪ Building nightly variant "${txtrst}
-RR_BUILDTYPE=nightly
+export RR_BUILDTYPE=nightly
 echo -e "";
 echo -e "";
 $normal
@@ -63,12 +58,9 @@ if [ "$askvariant" == "4" ]
 then
 echo -e "";
 echo -e ${blu}" ▪ Building weekly variant "${txtrst}
-RR_BUILDTYPE=weekly
+export RR_BUILDTYPE=weekly
 echo -e "";
 echo -e "";
 $normal
 sleep 1
-fi
-else
-echo -e "Building $RR_BUILDTYPE variant"
 fi
