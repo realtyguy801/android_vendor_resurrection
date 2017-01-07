@@ -59,11 +59,17 @@ function breakfast()
             # A buildtype was specified, assume a full device name
             lunch $target
         else
-            # This is probably just the CM model name
+            # This is probably just the Lineage model name
             if [ -z "$variant" ]; then
                 variant="userdebug"
             fi
-            lunch cm_$target-$variant
+
+            if ! check_product lineage_$target && check_product cm_$target; then
+                echo "** Warning: '$target' is using CM-based makefiles. This will be deprecated in the next major release."
+                lunch cm_$target-$variant
+            else
+                lunch lineage_$target-$variant
+            fi
         fi
     fi
     return $?
