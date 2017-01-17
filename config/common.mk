@@ -155,6 +155,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
+# Squisher Location
+SQUISHER_SCRIPT := vendor/cm/tools/squisher
+
 # Include CM audio files
 include vendor/cm/config/cm_audio.mk
 
