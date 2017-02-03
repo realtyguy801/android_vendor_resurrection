@@ -91,10 +91,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/Wallpaper/Wallpaper.apk:system/app/Wallpaper/Wallpaper.apk
 
-# DeskClock
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/DeskClock/DeskClock.apk:system/app/DeskClock/DeskClock.apk
-
 # DU Utils Library
 PRODUCT_BOOT_JARS += \
     org.dirtyunicorns.utils
@@ -188,6 +184,7 @@ PRODUCT_PACKAGES += \
     Trebuchet \
     MusicFX \
     CMFileManager \
+    DeskClock \
     Eleven \
     LockClock \
     CMSettingsProvider \
