@@ -48,6 +48,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
+# Build Substratum unless SUBSTRATUM is set to false
+ifneq ($(SUBSTRATUM),false)
+    PRODUCT_PACKAGES += \
+        Substratum
+endif
+
 # OMS MASQUERADE
 PRODUCT_PACKAGES += \
    masquerade
