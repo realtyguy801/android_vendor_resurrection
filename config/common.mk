@@ -56,6 +56,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.substratum.verified=true
 
+# Magisk Manager
+PRODUCT_PACKAGES += \
+    MagiskManager
+
+# Copy Magisk zip
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
+
 # Enable Google Assistant on all devices.
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true
