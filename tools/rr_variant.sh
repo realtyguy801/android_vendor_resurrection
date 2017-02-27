@@ -24,9 +24,9 @@
 
 echo -e ${ylw}"\n\n ▼ Which build-type do you want to choose?\n"${txtrst}
 echo -e "";
-echo -e ${blu}" 〉 1- Official "${txtrst}${red}"    ︱ Only for the official builds by the maintainers"${txtrst}
+echo -e ${blu}" 〉 1- Pimps "${txtrst}${red}"    ︱ For Pimps build"${txtrst}
 echo -e "";
-echo -e ${blu}" 〉 2- Pimps "${txtrst}${red}"  ︱ For Pimps build"${txtrst}
+echo -e ${blu}" 〉 2- Official "${txtrst}${red}"  ︱ Only for the official builds by the maintainers"${txtrst}
 echo -e "";
 echo -e ${blu}" 〉 3- Nightly "${txtrst}${red}"     ︱ Only for the official daily builds by the maintainers"${txtrst}
 echo -e "";
@@ -50,8 +50,8 @@ sleep 1
 if [ "$askvariant" == "1" ]
 then
 echo -e "";
-echo -e ${blu}" ▪ Building official variant "${txtrst}
-export RR_BUILDTYPE=Official
+echo -e ${blu}" ▪ Building pimps variant "${txtrst}
+export RR_BUILDTYPE=Pimps
 echo -e "";
 echo -e "";
 $normal
@@ -60,8 +60,8 @@ fi
 if [ "$askvariant" == "2" ]
 then
 echo -e "";
-echo -e ${blu}" ▪ Building unofficial variant "${txtrst}
-export RR_BUILDTYPE=Pimps
+echo -e ${blu}" ▪ Building official variant "${txtrst}
+export RR_BUILDTYPE=Official
 echo -e "";
 echo -e "";
 $normal
