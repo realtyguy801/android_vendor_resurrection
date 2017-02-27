@@ -35,7 +35,6 @@ echo -e "";
 $normal
 read -t 30 askvariant
 sleep 1
-fi
 if [ "$askvariant" == "1" ]
 then
 echo -e "";
@@ -55,3 +54,4 @@ echo -e "";
 echo -e "";
 $normal
 sleep 1
+fi
