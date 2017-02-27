@@ -56,6 +56,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.substratum.verified=true
 
+ifeq ($(WITH_MAGISK),true)
 # Magisk Manager
 PRODUCT_PACKAGES += \
     MagiskManager
@@ -63,6 +64,7 @@ PRODUCT_PACKAGES += \
 # Copy Magisk zip
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
+endif
 
 # Enable Google Assistant on all devices.
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -310,10 +312,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
 DEVICE_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
 PRODUCT_VERSION = 5.8.2
+ifeq ($(WITH_MAGISK),true)
 ifneq ($(RR_BUILDTYPE),)
-RR_VERSION := RR-N-v$(PRODUCT_VERSION)-$(shell date -u +%Y%m%d)-$(CM_BUILD)-$(RR_BUILDTYPE)
+RR_VERSION := RR-N-MAGISK-v$(PRODUCT_VERSION)-$(shell date -u +%Y%m%d)-$(CM_BUILD)-$(RR_BUILDTYPE)
 else
-RR_VERSION := RR-N-v$(PRODUCT_VERSION)-$(shell date -u +%Y%m%d)-$(CM_BUILD)
+RR_VERSION := RR-N-MAGISK-v$(PRODUCT_VERSION)-$(shell date -u +%Y%m%d)-$(CM_BUILD)
+endif
+endif
+
+ifeq ($(WITH_SU),true)
+ifneq ($(RR_BUILDTYPE),)
+RR_VERSION := RR-N-CMSU-v$(PRODUCT_VERSION)-$(shell date -u +%Y%m%d)-$(CM_BUILD)-$(RR_BUILDTYPE)
+else
+RR_VERSION := RR-N-CMSU-v$(PRODUCT_VERSION)-$(shell date -u +%Y%m%d)-$(CM_BUILD)
+endif
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
