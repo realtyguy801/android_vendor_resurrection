@@ -64,6 +64,10 @@ PRODUCT_PACKAGES += \
 # Copy Magisk zip
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
+
+# Magisk Root Flag
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.rr.root=magisk
 endif
 
 # Enable Google Assistant on all devices.
@@ -304,6 +308,10 @@ endif
 ifeq ($(WITH_SU),true)
 PRODUCT_PACKAGES += \
     su
+
+# CM Root Flag
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.rr.root=cm_root
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
