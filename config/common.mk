@@ -192,12 +192,13 @@ PRODUCT_PACKAGES += \
     Eleven \
     LockClock \
     CMSettingsProvider \
+    ExactCalculator \
     LiveLockScreenService \
     WeatherProvider \
     OmniStyle \
     OmniSwitch \
-    OmniJaws \
-    masquerade
+    OmniGallery \
+    OmniJaws
 
 # Exchange support
 PRODUCT_PACKAGES += \
