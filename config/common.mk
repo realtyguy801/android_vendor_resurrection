@@ -56,20 +56,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.substratum.verified=true
 
-ifeq ($(WITH_MAGISK),true)
-# Magisk Manager
-PRODUCT_PACKAGES += \
-    MagiskManager
-
-# Copy Magisk zip
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
-
-# Magisk Root Flag
-PRODUCT_PROPERTY_OVERRIDES := \
-    ro.rr.root=magisk
-endif
-
 # Enable Google Assistant on all devices.
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true
@@ -293,24 +279,41 @@ PRODUCT_PACKAGES += \
     procrank
 endif
 
+
+ifeq ($(WITH_PN_GAPPS),true)
+include vendor/gapps/arm64-phone-gapps.mk
+endif
+
+ifeq ($(WITH_PN_GAPPS),true)
+PRODUCT_PROPERTY_OVERRIDES += ro.pn.gapps=included
+else
+PRODUCT_PROPERTY_OVERRIDES += ro.pn.gapps=not included
+endif
+
+ifeq ($(WITH_MAGISK),true)
+# Magisk Manager
+PRODUCT_PACKAGES += \
+    MagiskManager
+
+# Copy Magisk zip
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
+
+# Magisk Root Flag
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.rr.root=magisk
+
 # Conditionally build in su
-ifeq ($(WITH_SU),true)
+else ifeq ($(WITH_SU),true)
 PRODUCT_PACKAGES += \
     su
 
 # CM Root Flag
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.rr.root=cm_root
-endif
-
-ifeq ($(WITH_PN_GAPPS),true)
--include vendor/gapps/arm64-phone-gapps.mk
-
-PRODUCT_PROPERTY_OVERRIDES := \
-    ro.pn.gapps=included
 else
-PRODUCT_PROPERTY_OVERRIDES := \
-    ro.pn.gapps=not included
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.rr.root=not rooted
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \

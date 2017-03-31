@@ -51,7 +51,6 @@ then
 echo -e "";
 echo -e ${blu}" ▪ Building Pimps build without PN Gapps "${txtrst}
 export RR_BUILDTYPE=Pimps
-export WITH_PN_GAPPS=false
 echo -e "";
 echo -e "";
 $normal
