@@ -189,7 +189,7 @@ PRODUCT_PACKAGES += \
     ResurrectionOTA \
     ResurrectionStats \
     MusicFX \
-    Eleven \
+    Phonograph \
     LockClock \
     CMSettingsProvider \
     ExactCalculator \
