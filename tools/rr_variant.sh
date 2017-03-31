@@ -24,21 +24,9 @@
 
 echo -e ${ylw}"\n\n ▼ Which build-type do you want to choose?\n"${txtrst}
 echo -e "";
-echo -e ${blu}" 〉 1- Pimps "${txtrst}${red}"    ︱ For Pimps build"${txtrst}
+echo -e ${blu}" 〉 1- With Gapps "${txtrst}${red}"    ︱ Pimps build with PN Gapps"${txtrst}
 echo -e "";
-echo -e ${blu}" 〉 2- Official "${txtrst}${red}"  ︱ Only for the official builds by the maintainers"${txtrst}
-echo -e "";
-echo -e ${blu}" 〉 3- Nightly "${txtrst}${red}"     ︱ Only for the official daily builds by the maintainers"${txtrst}
-echo -e "";
-echo -e ${blu}" 〉 4- Weekly "${txtrst}${red}"      ︱ Only for the official weekly builds by the maintainers"${txtrst}
-echo -e "";
-echo -e ${blu}" 〉 5- Release "${txtrst}${red}"     ︱ Only for the official releases by the RR-Team"${txtrst}
-echo -e "";
-echo -e ${blu}" 〉 6- Milestone "${txtrst}${red}"   ︱ Only for the milestone releases by the RR-Team"${txtrst}
-echo -e "";
-echo -e ${blu}" 〉 7- Experimental "${txtrst}${red}"︱ Only for the experimental releases by the RR-Team"${xtrst}
-echo -e "";
-echo -e ${blu}" 〉 8- Final "${txtrst}${red}"       ︱ Only for the final releases by the RR-Team"${xtrst}
+echo -e ${blu}" 〉 2- Without Gapps "${txtrst}${red}"  ︱ Pimps build without PN Gapps"${txtrst}
 echo -e "";
 echo -e ${blu}" 🕑  30/sec Time-out"${txtrst}${red}"︱ Default option"${txtrst}
 echo -e "";
@@ -50,8 +38,9 @@ sleep 1
 if [ "$askvariant" == "1" ]
 then
 echo -e "";
-echo -e ${blu}" ▪ Building pimps variant "${txtrst}
-export RR_BUILDTYPE=Pimps
+echo -e ${blu}" ▪ Building Pimps build with PN Gapps "${txtrst}
+export RR_BUILDTYPE=PimpsX
+export WITH_PN_GAPPS=true
 echo -e "";
 echo -e "";
 $normal
@@ -60,68 +49,9 @@ fi
 if [ "$askvariant" == "2" ]
 then
 echo -e "";
-echo -e ${blu}" ▪ Building official variant "${txtrst}
-export RR_BUILDTYPE=Official
-echo -e "";
-echo -e "";
-$normal
-sleep 1
-fi
-if [ "$askvariant" == "3" ]
-then
-echo -e "";
-echo -e ${blu}" ▪ Building nightly variant "${txtrst}
-export RR_BUILDTYPE=Nightly
-echo -e "";
-echo -e "";
-$normal
-sleep 1
-fi
-if [ "$askvariant" == "4" ]
-then
-echo -e "";
-echo -e ${blu}" ▪ Building weekly variant "${txtrst}
-export RR_BUILDTYPE=Weekly
-echo -e "";
-echo -e "";
-$normal
-sleep 1
-fi
-if [ "$askvariant" == "5" ]
-then
-echo -e "";
-echo -e ${blu}" ▪ Building release variant "${txtrst}
-export RR_BUILDTYPE=Release
-echo -e "";
-echo -e "";
-$normal
-sleep 1
-fi
-if [ "$askvariant" == "6" ]
-then
-echo -e "";
-echo -e ${blu}" ▪ Building milestone variant "${txtrst}
-export RR_BUILDTYPE=Milestone
-echo -e "";
-echo -e "";
-$normal
-sleep 1
-fi
-if [ "$askvariant" == "7" ]
-then
-echo -e "";
-echo -e ${blu}" ▪ Building experimental variant "${txtrst}
-export RR_BUILDTYPE=Experimental
-echo -e "";
-echo -e "";
-$normal
-sleep 1
-fi
-if [ "$askvariant" == "8" ]
-then
-echo -e "";
-echo -e ${blu}" ▪ Building final variant "${txtrst}
-export RR_BUILDTYPE=Final
+echo -e ${blu}" ▪ Building Pimps build without PN Gapps "${txtrst}
+export RR_BUILDTYPE=Pimps
+export WITH_PN_GAPPS=false
 echo -e "";
 echo -e "";
 $normal

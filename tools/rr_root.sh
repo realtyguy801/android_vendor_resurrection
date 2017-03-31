@@ -40,6 +40,7 @@ then
 echo -e "";
 echo -e ${blu}" ▪ Building with Magisk Root "${txtrst}
 export WITH_MAGISK=true
+export WITH_SU=false
 echo -e "";
 echo -e "";
 $normal
@@ -50,6 +51,7 @@ then
 echo -e "";
 echo -e ${blu}" ▪ Building with CM Root "${txtrst}
 export WITH_SU=true
+export WITH_MAGISK=false
 echo -e "";
 echo -e "";
 $normal

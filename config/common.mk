@@ -303,6 +303,14 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.rr.root=cm_root
 endif
 
+ifeq ($(WITH_PN_GAPPS),true)
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.pn.gapps=included
+else
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.pn.gapps=not included
+endif
+
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=2
 
