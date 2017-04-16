@@ -176,7 +176,6 @@ PRODUCT_PACKAGES += \
     ResurrectionStats \
     MusicFX \
     Eleven \
-    LockClock \
     CMSettingsProvider \
     ExactCalculator \
     LiveLockScreenService \
