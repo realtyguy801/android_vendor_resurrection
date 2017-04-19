@@ -281,7 +281,7 @@ endif
 
 
 ifeq ($(WITH_PN_GAPPS),true)
-include vendor/gapps/arm64-phone-gapps.mk
+include vendor/gapps/gapps.mk
 PRODUCT_PROPERTY_OVERRIDES += ro.pn.gapps=included
 else
 PRODUCT_PROPERTY_OVERRIDES += ro.pn.gapps=not included
