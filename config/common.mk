@@ -179,6 +179,7 @@ PRODUCT_PACKAGES += \
     Eleven \
     CMSettingsProvider \
     ExactCalculator \
+    Jelly \
     LiveLockScreenService \
     WeatherProvider \
     OmniStyle \
