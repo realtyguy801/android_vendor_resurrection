@@ -184,7 +184,8 @@ PRODUCT_PACKAGES += \
     OmniStyle \
     OmniSwitch \
     OmniGallery \
-    OmniJaws
+    OmniJaws \
+    Turbo
 
 # Exchange support
 PRODUCT_PACKAGES += \
