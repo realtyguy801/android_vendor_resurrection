@@ -315,9 +315,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.rr.root=not rooted
 endif
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=2
-
 DEVICE_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
 PRODUCT_VERSION = 5.9.0
