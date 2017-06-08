@@ -175,7 +175,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ResurrectionOTA \
     ResurrectionStats \
-    MusicFX \
+    AudioFX \
     Eleven \
     CMSettingsProvider \
     ExactCalculator \
