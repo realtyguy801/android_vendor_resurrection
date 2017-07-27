@@ -28,7 +28,7 @@ echo -e ${blu}" 〉 1- With Gapps "${txtrst}${red}"    ︱ Pimps build with PN G
 echo -e "";
 echo -e ${blu}" 〉 2- Without Gapps "${txtrst}${red}"  ︱ Pimps build without PN Gapps"${txtrst}
 echo -e "";
-echo -e ${blu}" 🕑  30/sec Time-out"${txtrst}${red}"︱ Default option"${txtrst}
+echo -e ${blu}" 〉 30/sec Time-out"${txtrst}${red}" ︱ Default option"${txtrst}
 echo -e "";
 echo -e ${cya}" ▼ Pick a number"${txtrst}
 echo -e "";
